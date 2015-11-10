@@ -8,7 +8,7 @@ class Bee
   end
 
   def self.count
-	@@count
+  @@count
   end
 
 end
