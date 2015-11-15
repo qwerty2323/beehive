@@ -3,10 +3,10 @@ SimpleCov.start
 require 'spec_helper'
 require 'beehive'
 
-describe 'Beehive' do
+describe 'beehive' do
 
-  context 'files' do
-    it 'should load files' do
+  context 'Fetch data' do
+    it 'should load ' do
       #
     end 
   end

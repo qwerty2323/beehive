@@ -20,52 +20,56 @@ class CSVReader
   end
 
   def efficiency
-    (1..@@Bee.count).each do |bee_id|
-      @harvest_data.find_all {|item| item[:bee_id] == bee_id}
+    eff_rating = []
+    (1..Bee.count).each do |bee_id| # => Where I can find Bee.count?..
+      harvested_sugar = []
+      look_throught_harvest_by_bee_id = @harvest_data.find {|item| item[:bee_id] == bee_id}
+      look_throught_harvest_by_bee_id.each{|item| harvested_sugar << sugar([:pollen_id], item[:mass])}
+      eff_rating << harvested_sugar.reduce(:+)/look_throught_harvest_by_bee_id.count
     end
-
   end
  
-  def sugar(pollen_id, mass)
-    
+  def sugar(pollen_id, mass)   
     pollen_row   = @pollen_data.find {|item| item[:pollen_id] == pollen_id}
     sugar_per_mg = row[:sugar_per_mg]
     harvest_row  = @harvest_data.find {|item| item[:mass] == mass}
     mass         = row[:mass]
     return sugar_per_mg * mass 
-    
-    #for each pollen id get content of sugar from pollens.csv
-    #convert mass to sugar for each pollen id from harvest.csv
-    #summ up sugar for each pollen id
-    #return the max of sugar
   end
  
-  def best_day
-    #
-  end
-
   def most_effient
-    
+    @harvest_data[efficiency.max.index][:bee_id]
   end
  
   def least_effient
-    
+    @harvest_data[efficiency.min.index][:bee_id]
   end
  
   def popular
-    
+    pop_rating = []
+    (1..Pollen.count).each do |pollen_id|
+      mass_array = []
+      look_through_harvest_by_pollen_id = @harvest_data.find {|item| item[:pollen_id] == pollen_id} # => Return an array of Harvest objects with pollen_id
+      look_through_harvest_by_pollen_id.each {|item| mass_array << item[:mass]}
+      pop_rating << mass_array.reduce(:+)
+    end
+    return @pollen_data[pop_rating.max.index][:name]  # => Returns name of the Pollen
   end
  
-  def best_day
-    
+  def day
+    sugar_per_day = []
+    (1..Day.count).each do |day|    # => Where I can find Day.count?..
+      look_throught_harvest_by_day = @harvest_data.find {|item| item[:day] == day}
+      look_throught_harvest_by_day.each {|item| sugar_per_day << sugar(item[:pollen_id], item[:mass])}
+    end
   end
  
   def worst_day
-    
+    @harvest_data.find[day.min.index][:day]
   end
- 
-  def most_sugar
-    
+
+  def best_day
+    @harvest_data[day.max.index][:day]
   end
 
 end

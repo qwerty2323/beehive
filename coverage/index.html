@@ -5,7 +5,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <script src='./assets/0.10.0/application.js' type='text/javascript'></script>    
     <link href='./assets/0.10.0/application.css' media='screen, projection, print' rel='stylesheet' type='text/css'>
-    <link rel="shortcut icon" type="image/png" href="./assets/0.10.0/favicon_green.png" />
+    <link rel="shortcut icon" type="image/png" href="./assets/0.10.0/favicon_red.png" />
     <link rel="icon" type="image/png" href="./assets/0.10.0/favicon.png" />
   </head>
   
@@ -14,27 +14,27 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-11-15T12:24:16+00:00">2015-11-15T12:24:16+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-11-15T18:42:49+00:00">2015-11-15T18:42:49+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">100.0%</span></span>
+    (<span class="covered_percent"><span class="red">36.96%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.0
+         0.4
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>1</b> files in total.
-    <b>0</b> relevant lines. 
-    <span class="green"><b>0</b> lines covered</span> and
-    <span class="red"><b>0</b> lines missed </span>
+    <b>46</b> relevant lines. 
+    <span class="green"><b>17</b> lines covered</span> and
+    <span class="red"><b>29</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -51,13 +51,13 @@
     <tbody>
       
       <tr>
-        <td class="strong"><a href="#5dcb01fe9075cb08918220b43b1ac00cd1c9c581" class="src_link" title="lib/beehive.rb">lib/beehive.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>15</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0.0</td>
+        <td class="strong"><a href="#20203d49adc856266a353194822f951f7be1bbf2" class="src_link" title="lib/CSVReader.rb">lib/CSVReader.rb</a></td>
+        <td class="red strong">36.96 %</td>
+        <td>75</td>
+        <td>46</td>
+        <td>17</td>
+        <td>29</td>
+        <td>0.4</td>
       </tr>
       
     </tbody>
@@ -76,108 +76,468 @@
     
       <div class="source_files">
       
-        <div class="source_table" id="5dcb01fe9075cb08918220b43b1ac00cd1c9c581">
+        <div class="source_table" id="20203d49adc856266a353194822f951f7be1bbf2">
   <div class="header">
-    <h3>lib/beehive.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
+    <h3>lib/CSVReader.rb</h3>
+    <h4><span class="red">36.96 %</span> covered</h4>
     <div>
-      <b>0</b> relevant lines. 
-      <span class="green"><b>0</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <b>46</b> relevant lines. 
+      <span class="green"><b>17</b> lines covered</span> and
+      <span class="red"><b>29</b> lines missed.</span>
     </div>
   </div>
   
   <pre>
     <ol>
       
-        <li class="never" data-hits="" data-linenumber="1">
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">require_relative &#39;Bee&#39;</code>
+          <code class="ruby">require &#39;csv&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="2">
           
           
-          <code class="ruby">require_relative &#39;Pollen&#39;</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="3">
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">require_relative &#39;Harvest&#39;</code>
+          <code class="ruby">class CSVReader</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="4">
           
           
-          <code class="ruby">require_relative &#39;Data&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="5">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="6">
+        <li class="covered" data-hits="1" data-linenumber="5">
+          <span class="hits">1</span>
           
+          <code class="ruby">  HARVEST = &quot;../data/harvest.csv&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
           
-          <code class="ruby">data = Data.new</code>
+          <code class="ruby">  POLLEN  = &quot;../data/pollens.csv&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="7">
           
           
-          <code class="ruby">data.read</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="8">
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"> </code>
+          <code class="ruby">  def initialize</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="9">
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">puts &quot;The most sugar was produces from #{data.most_sugar} pollen&quot;</code>
+          <code class="ruby">    @harvest_data = []</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="10">
+        <li class="covered" data-hits="1" data-linenumber="10">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">puts &quot;The most efficient bee is #{data.most_efficient}&quot;</code>
+          <code class="ruby">    @pollen_data  = []</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="11">
           
           
-          <code class="ruby">puts &quot;The most popular pollen is #{data.most_popular}&quot;</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="12">
           
           
-          <code class="ruby">puts &quot;The least efficient bee is #{data.least_efficient}&quot;</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="13">
+        <li class="covered" data-hits="1" data-linenumber="13">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">puts &quot;The best day for harvest was #{data.best_day}&quot;</code>
+          <code class="ruby">  def read</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="14">
+        <li class="covered" data-hits="1" data-linenumber="14">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">puts &quot;The worst day for harvest was #{data.worst_day}&quot;&#39;</code>
+          <code class="ruby">    CSV.foreach(HARVEST, headers: true, converters: :all) do |row|</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="15">
+        <li class="missed" data-hits="0" data-linenumber="15">
+          
+          
+          <code class="ruby">      @harvest_data &lt;&lt; Harvest.new(bee_id: row[&quot;bee_id&quot;], day: row[&quot; day&quot;], pollen_id: row[&quot; pollen_id&quot;], mass: row[&quot; miligrams_harvested&quot;])</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="16">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="17">
+          
+          
+          <code class="ruby">    CSV.foreach(POLLEN, headers: true, converters: :all) do |row|</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="18">
+          
+          
+          <code class="ruby">      @pollen_data &lt;&lt; Pollen.new(row[&quot;pollen_id&quot;], row[&quot; name&quot;], row[&quot; sugar_per_mg&quot;])</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="20">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="21">
           
           
           <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="22">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def efficiency</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="23">
+          
+          
+          <code class="ruby">    eff_rating = []</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="24">
+          
+          
+          <code class="ruby">    (1..Bee.count).each do |bee_id| # =&gt; Where I can find Bee.count?..</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="25">
+          
+          
+          <code class="ruby">      harvested_sugar = []</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="26">
+          
+          
+          <code class="ruby">      look_throught_harvest_by_bee_id = @harvest_data.find {|item| item[:bee_id] == bee_id}</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="27">
+          
+          
+          <code class="ruby">      look_throught_harvest_by_bee_id.each{|item| harvested_sugar &lt;&lt; sugar([:pollen_id], item[:mass])}</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="28">
+          
+          
+          <code class="ruby">      eff_rating &lt;&lt; harvested_sugar.reduce(:+)/look_throught_harvest_by_bee_id.count</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="29">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="31">
+          
+          
+          <code class="ruby"> </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="32">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def sugar(pollen_id, mass)   </code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="33">
+          
+          
+          <code class="ruby">    pollen_row   = @pollen_data.find {|item| item[:pollen_id] == pollen_id}</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="34">
+          
+          
+          <code class="ruby">    sugar_per_mg = row[:sugar_per_mg]</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="35">
+          
+          
+          <code class="ruby">    harvest_row  = @harvest_data.find {|item| item[:mass] == mass}</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="36">
+          
+          
+          <code class="ruby">    mass         = row[:mass]</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="37">
+          
+          
+          <code class="ruby">    return sugar_per_mg * mass </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="38">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="39">
+          
+          
+          <code class="ruby"> </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="40">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def most_effient</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="41">
+          
+          
+          <code class="ruby">    @harvest_data[efficiency.max.index][:bee_id]</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="42">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="43">
+          
+          
+          <code class="ruby"> </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="44">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def least_effient</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="45">
+          
+          
+          <code class="ruby">    @harvest_data[efficiency.min.index][:bee_id]</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="46">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="47">
+          
+          
+          <code class="ruby"> </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="48">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def popular</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="49">
+          
+          
+          <code class="ruby">    pop_rating = []</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="50">
+          
+          
+          <code class="ruby">    (1..Pollen.count).each do |pollen_id|</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="51">
+          
+          
+          <code class="ruby">      mass_array = []</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="52">
+          
+          
+          <code class="ruby">      look_through_harvest_by_pollen_id = @harvest_data.find {|item| item[:pollen_id] == pollen_id} # =&gt; Return an array of Harvest objects with pollen_id</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="53">
+          
+          
+          <code class="ruby">      look_through_harvest_by_pollen_id.each {|item| mass_array &lt;&lt; item[:mass]}</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="54">
+          
+          
+          <code class="ruby">      pop_rating &lt;&lt; mass_array.reduce(:+)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="55">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="56">
+          
+          
+          <code class="ruby">    return @pollen_data[pop_rating.max.index][:name]  # =&gt; Returns name of the Pollen</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="57">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="58">
+          
+          
+          <code class="ruby"> </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="59">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def day</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="60">
+          
+          
+          <code class="ruby">    sugar_per_day = []</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="61">
+          
+          
+          <code class="ruby">    (1..Day.count).each do |day|    # =&gt; Where I can find Day.count?..</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="62">
+          
+          
+          <code class="ruby">      look_throught_harvest_by_day = @harvest_data.find {|item| item[:day] == day}</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="63">
+          
+          
+          <code class="ruby">      look_throught_harvest_by_day.each {|item| sugar_per_day &lt;&lt; sugar(item[:pollen_id], item[:mass])}</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="64">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="65">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="66">
+          
+          
+          <code class="ruby"> </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="67">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def worst_day</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="68">
+          
+          
+          <code class="ruby">    @harvest_data.find[day.min.index][:day]</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="69">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="70">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="71">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def best_day</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="72">
+          
+          
+          <code class="ruby">    @harvest_data[day.max.index][:day]</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="73">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="74">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="75">
+          
+          
+          <code class="ruby">end</code>
         </li>
       
     </ol>
