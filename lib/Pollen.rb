@@ -1,15 +1,16 @@
 class Pollen
-  attr_accessor :id, :sugar_per_mg
+  attr_accessor :pollen_id, :name, :sugar_per_mg
   @@count = 0
 
   def initialize(args)
-    @id           = args[:id]
+    @pollen_id    = args[:id]
+    @name         = args[:name]
     @sugar_per_mg = args[:sugar_per_mg]
-    @@count      += 1
+    @@count   += 1
   end
 
   def self.count
     @@count
-  end
-
+  end  
+  
 end
