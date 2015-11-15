@@ -21,7 +21,7 @@ class CSVReader
 
   def efficiency
     eff_rating = []
-    (1..Bee.count).each do |bee_id| # => Where I can find Bee.count?..
+    (1..@bee_count).each do |bee_id|
       harvested_sugar = []
       look_throught_harvest_by_bee_id = @harvest_data.find {|item| item[:bee_id] == bee_id}
       look_throught_harvest_by_bee_id.each{|item| harvested_sugar << sugar([:pollen_id], item[:mass])}
@@ -36,7 +36,17 @@ class CSVReader
     mass         = row[:mass]
     return sugar_per_mg * mass 
   end
- 
+  
+  def most_sugar
+    sugar_per_pollen = []
+    (1..Pollen.count).each do |pollen_id|
+      sugar_for_day = []
+      look_through_harvest_by_pollen_id.each {|item| sugar_for_day << sugar(item[:pollen_id],item[:mass])}
+      sugar_per_pollen << sugar_for_day.reduce(:+)
+    end
+    return @pollen_data[sugar_per_pollen.max.index][:name]
+  end 
+
   def most_effient
     @harvest_data[efficiency.max.index][:bee_id]
   end
@@ -58,7 +68,7 @@ class CSVReader
  
   def day
     sugar_per_day = []
-    (1..Day.count).each do |day|    # => Where I can find Day.count?..
+    (1..@day_count).each do |day|  
       look_throught_harvest_by_day = @harvest_data.find {|item| item[:day] == day}
       look_throught_harvest_by_day.each {|item| sugar_per_day << sugar(item[:pollen_id], item[:mass])}
     end
@@ -72,4 +82,15 @@ class CSVReader
     @harvest_data[day.max.index][:day]
   end
 
+  def day_count
+    day_array = []
+    @harvest_data.each {|item| day_array << item[:day]}
+    @day_count = day_array.uniq.length
+  end
+
+  def bee_count
+    bee_array = []
+    @harvest_data.each {|item| bee_array << item[:bee]}
+    @bee_count = day_array.uniq.length
+  end
 end
