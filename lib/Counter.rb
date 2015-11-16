@@ -1,7 +1,4 @@
-require 'CSVReader'
-
 module Counter
-
   def day
     CSVReader.new.read
     day_array = []
@@ -16,7 +13,7 @@ module Counter
     return bee_array.uniq.length
   end
 
-   def pollen
+  def pollen
   	CSVReader.new.read
     pollen_array = []
     @harvest_data.each {|item| pollen_array << item[:pollen_id]}
