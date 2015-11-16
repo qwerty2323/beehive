@@ -1,9 +1,15 @@
-module Efficiency
-  include Counter
-  def efficiency
+require_relative 'CSVReader'
+require_relative 'Counter'
+
+class Efficiency
+  
+  def initialize
     CSVReader.new.read
     eff_rating = []
-    (1..Counter::bee).each do |bee_id|
+  end
+
+  def efficiency
+    (1..Counter.new.bee).each do |bee_id|
       harvested_sugar = []
       look_throught_harvest_by_bee_id = @harvest_data.select {|item| item[:bee_id] == bee_id}
       look_throught_harvest_by_bee_id.each{|item| harvested_sugar << sugar([:pollen_id], item[:mass])}

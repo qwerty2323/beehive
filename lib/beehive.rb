@@ -1,10 +1,11 @@
 require_relative "Calendar"
 require_relative "Efficiency"
 require_relative "Popularity"
- 
-puts "The most sugar was produces from #{Sugar::most_sugar} pollen"
-puts "The most efficient bee is #{Efficiency::most_efficient}"
-puts "The least efficient bee is #{Efficiency::least_efficient}"
-puts "The most popular pollen was #{Popularity::popular}"
-puts "The best day for harvest was #{Calendar::best_day}"
-puts "The worst day for harvest was #{Calendar::worst_day}"
+require_relative "Sugar"
+
+puts "The most sugar was produces from #{Sugar.new.most_sugar} pollen"
+puts "The most efficient bee is #{Efficiency.new.most_efficient}"
+puts "The least efficient bee is #{Efficiency.new.least_efficient}"
+puts "The most popular pollen was #{Popularity.new.popular}"
+puts "The best day for harvest was #{Calendar.new.best_day}"
+puts "The worst day for harvest was #{Calendar.new.worst_day}"
