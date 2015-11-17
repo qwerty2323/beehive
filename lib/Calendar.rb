@@ -9,7 +9,7 @@ class Calendar
   end
 
   def day
-    (1..Counter::day).each do |day| 
+    (1..Counter.new.day).each do |day| 
       look_throught_harvest_by_day = @harvest_data.select {|item| item[:day] == day}
       look_throught_harvest_by_day.each {|item| sugar_per_day << sugar(item[:pollen_id], item[:mass])}
     end
