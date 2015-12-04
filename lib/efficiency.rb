@@ -1,31 +1,60 @@
-require_relative 'CSVReader'
+require_relative 'CsvReader'
 require_relative 'counter'
+require_relative 'sugarcalculator'
 
 class Efficiency
-
+  attr_reader :eff_rating
   # Here I should make top-level documentation comment  
   def initialize
-    CSVReader.new.read
-    eff_rating = []
+    @table       ||= CsvReader.new.harvest_data
+    @eff_rating  ||= []
+    
   end
 
-  def efficiency
-    (1..Counter.new.bee).each do |bee_id|
-      harvested_sugar = []
-      look_throught_harvest_by_bee_id = @harvest_data.select { |item| item[:bee_id] == bee_id }
-      look_throught_harvest_by_bee_id.each do |item|
-        harvested_sugar << sugar([:pollen_id], item[:mass])
-      end
-      eff_rating << harvested_sugar.reduce(:+) /
-        look_throught_harvest_by_bee_id.count
+  def efficiency_rating
+   Counter.new.bee.each do |bee_id|
+      @eff_rating << efficiency(bee_id)
+   end
+   @eff_rating
+  end
+
+  def efficiency(bee_id)
+    harvested_sugar(bee_id) / workdays(bee_id)
+  end
+
+  def by(bee_id)
+    @table.select { |item| item[:bee_id] == bee_id }
+  end
+
+  def workdays(bee_id)
+    by(bee_id).size
+  end
+
+  def harvested_sugar(bee_id)
+    values = []
+    by(bee_id).each do |item|
+      values << sugar(item[:pollen_id], item[:mass]) 
     end
+    values.reduce(:+)
   end
 
-  def most_effient
-    @harvest_data[efficiency.max.index][:bee_id]
+  def sugar(id, mass)
+    SugarCalculator.new(pollen_id: id, mass: mass).sugar
   end
 
-  def least_effient
-    @harvest_data[efficiency.min.index][:bee_id]
+  def most_efficient
+    efficiency_rating[idx_max][:bee_id]
   end
+
+  def least_efficient
+    efficiency_rating[idx_min][:bee_id]
+  end
+
+  def idx_max
+    eff_rating.index { |x| x == eff_rating.max }
+  end
+
+  def idx_min
+    eff_rating.index { |x| x == eff_rating.min }
+  end  
 end

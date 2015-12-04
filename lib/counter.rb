@@ -1,19 +1,28 @@
 require_relative 'CsvReader'
-module Counter
+class Counter
+  attr_reader :day_array, :bee_array, :pollen_array
   # Here I should make top-level documentation comment
-  # @harvest_data & @pollen_data are not initilized!!!
+  def initialize
+    @day_array ||= []
+    @bee_array ||= []
+    @pollen_array ||= []
+    
+    CsvReader.new.harvest_data.each do |item|
+      day_array    << item[:day]
+      bee_array    << item[:bee_id]
+      pollen_array << item[:pollen_id]
+    end
+  end
+
   def day
-    @harvest_data.each { |item| day_array << item[:day] }
-    day_array.uniq.length
+    day_array.uniq
   end
 
   def bee
-    @harvest_data.each { |item| bee_array << item[:bee_id] }
-    bee_array.uniq.length
+    bee_array.uniq
   end
 
   def pollen
-    @harvest_data.each { |item| pollen_array << item[:pollen_id] }
-    pollen_array.uniq.length
+    pollen_array.uniq
   end
 end

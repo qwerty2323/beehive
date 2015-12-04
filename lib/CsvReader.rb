@@ -1,7 +1,5 @@
 #!/usr/bin/ruby -wKU
 require 'csv'
-require_relative 'harvest'
-require_relative 'pollen'
 
 class CsvReader
   attr_reader :pollen_data, :harvest_data
