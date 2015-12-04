@@ -1,0 +1,11 @@
+#!/usr/bin/ruby -wKU
+
+class Pollen
+  attr_reader :name, :sugar_per_mg, :pollen_id
+
+  def initialize(args)
+    @name         = args[:name]
+    @sugar_per_mg = args[:sugar_per_mg]
+    @pollen_id    = args[:pollen_id]
+  end
+end

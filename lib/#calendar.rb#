@@ -3,6 +3,7 @@ require_relative 'Counter'
 
 class Calendar
   
+  # Here I should make top-level documentation comment
   def initialize
     CSVReader.new.read
     sugar_per_day = []
@@ -10,8 +11,12 @@ class Calendar
 
   def day
     (1..Counter.new.day).each do |day| 
-      look_throught_harvest_by_day = @harvest_data.select {|item| item[:day] == day}
-      look_throught_harvest_by_day.each {|item| sugar_per_day << sugar(item[:pollen_id], item[:mass])}
+      look_throught_harvest_by_day = @harvest_data.select do |item| 
+        item[:day] == day
+      end
+      look_throught_harvest_by_day.each do |item| 
+        sugar_per_day << sugar(item[:pollen_id], item[:mass])
+      end
     end
   end
 
@@ -21,5 +26,5 @@ class Calendar
 
   def best_day
     @harvest_data[day.max.index][:day]
-  end    
+  end
 end

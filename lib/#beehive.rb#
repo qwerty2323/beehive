@@ -16,3 +16,10 @@ def most_sugar
   
 end
 
+def look_for(what=0, where=[])
+  
+end
+
+def summ_up(array)
+  array.reduce(:+)
+end
