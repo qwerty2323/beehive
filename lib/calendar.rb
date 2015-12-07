@@ -1,17 +1,18 @@
+#!/usr/bin/ruby -wKU
 require_relative 'CsvReader'
 require_relative 'counter'
 require_relative 'sugarcalculator'
 
 class Calendar
-  
   # Here I should make top-level documentation comment
   def initialize
-    @table         ||= CsvReader.new.harvest_data
-    @sugar_per_day ||= []
+    @table         = CsvReader.new.harvest_data
+    @sugar_per_day = []
+    @day_array     = Counter.new.day
   end
 
   def day_estimation
-    Counter.new.day.each do |day|
+    @day_array.each do |day|
       daily_sugar(day)
     end
   end
@@ -29,11 +30,11 @@ class Calendar
   end
   
   def worst_day
-    @sugar_per_day[idx_min][:day]
+    puts " The worst day for harvest was on #{@day_array[idx_min]}"
   end
 
   def best_day
-    @sugar_per_day[idx_max][:day]
+    puts "The best day for harvest was on #{@day_array[idx_max]}"
   end
 
   def idx_max
@@ -42,5 +43,5 @@ class Calendar
 
   def idx_min
     @sugar_per_day.index { |x| x == sugar_per_day.min }
-  end 
+  end
 end

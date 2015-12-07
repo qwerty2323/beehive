@@ -6,9 +6,9 @@ class Popularity
   attr_reader :pop_rating, :pollen_data
   # Here I should make top-level documentation comment
   def initialize
-    @pollen_data ||= CsvReader.new.pollen_data
-    @table       ||= CsvReader.new.harvest_data
-    @pop_rating  ||= []
+    @pollen_data = CsvReader.new.pollen_data
+    @table       = CsvReader.new.harvest_data
+    @pop_rating  = []
   end
 
   def popular
@@ -19,6 +19,7 @@ class Popularity
   end
 
   def most_popular
+    popular
     @pollen_data[pop_idx][:name]
   end
 

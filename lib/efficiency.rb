@@ -1,3 +1,4 @@
+#!/usr/bin/ruby -wKU
 require_relative 'CsvReader'
 require_relative 'counter'
 require_relative 'sugarcalculator'
@@ -6,16 +7,15 @@ class Efficiency
   attr_reader :eff_rating
   # Here I should make top-level documentation comment  
   def initialize
-    @table       ||= CsvReader.new.harvest_data
-    @eff_rating  ||= []
-    
+    @table       = CsvReader.new.harvest_data
+    @eff_rating  = []
+    @bee         = Counter.new.bee
   end
 
   def efficiency_rating
-   Counter.new.bee.each do |bee_id|
+    @bee.each do |bee_id|
       @eff_rating << efficiency(bee_id)
-   end
-   @eff_rating
+    end
   end
 
   def efficiency(bee_id)
@@ -43,11 +43,13 @@ class Efficiency
   end
 
   def most_efficient
-    efficiency_rating[idx_max][:bee_id]
+    efficiency_rating
+    puts "The most efficient bee is #{@bee[idx_max]}"
   end
 
   def least_efficient
-    efficiency_rating[idx_min][:bee_id]
+    efficiency_rating
+    puts "The least efficient bee is #{@bee[idx_min]}"
   end
 
   def idx_max
