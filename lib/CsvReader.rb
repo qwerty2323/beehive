@@ -12,18 +12,16 @@ class CsvReader
     @pollen_data  ||= []
     
     CSV.foreach(HARVEST, headers: true, converters: :all) do |row|
-      @harvest_data << harvest = {
-        bee_id:    row['bee_id'],
-        day:       row[' day'],
-        pollen_id: row[' pollen_id'],
-        mass:      row[' miligrams_harvested'] }
+      @harvest_data << {bee_id:    row['bee_id'],
+                        day:       row[' day'],
+                        pollen_id: row[' pollen_id'],
+                        mass:      row[' miligrams_harvested'] }
     end
     
     CSV.foreach(POLLEN, headers: true, converters: :all) do |row|
-      @pollen_data << pollen = {
-        pollen_id:    row['id'],
-        name:         row['name'],
-        sugar_per_mg: row['sugar_per_mg'] }
+      @pollen_data << {pollen_id:    row['id'],
+                       name:         row['name'],
+                       sugar_per_mg: row['sugar_per_mg'] }
     end
   end
 end

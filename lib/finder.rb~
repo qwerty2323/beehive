@@ -1,0 +1,13 @@
+#!/usr/bin/ruby -wKU
+require 'CsvReader'
+
+class Finder
+  def initialize
+    @table = CsvReader.new.harvest_data
+  end
+  def by(arg)
+    @table.select do |item|
+      item[arg.to_sym] == arg
+    end
+  end
+end

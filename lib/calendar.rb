@@ -4,6 +4,7 @@ require_relative 'counter'
 require_relative 'sugarcalculator'
 
 class Calendar
+  attr_reader :sugar_per_day
   # Here I should make top-level documentation comment
   def initialize
     @table         = CsvReader.new.harvest_data
@@ -24,16 +25,20 @@ class Calendar
   end
 
   def daily_sugar(day)
+    sugar_array = []
     by(day).each do |item| 
-      @sugar_per_day << SugarCalculator.new(pollen_id: item[:pollen_id], mass: item[:mass]).sugar
+      sugar_array << SugarCalculator.new(pollen_id: item[:pollen_id], mass: item[:mass]).sugar
     end
+    @sugar_per_day << sugar_array.reduce(:+)
   end
   
   def worst_day
+    day_estimation
     puts " The worst day for harvest was on #{@day_array[idx_min]}"
   end
 
   def best_day
+    day_estimation
     puts "The best day for harvest was on #{@day_array[idx_max]}"
   end
 
