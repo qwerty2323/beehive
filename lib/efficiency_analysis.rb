@@ -16,8 +16,9 @@ class EfficiencyAnalysis < SugarAnalysis
   end
 
   def result(search_column, column_name, value)
-    if iterator && search_column == :bee_id && column_name == :mass
-      puts "ID of bee with #{value} efficiency was #{self.unique_values_of(iterator)[idx(value)]}"
+    calculate(search_column, column_name)
+    if search_column == :bee_id && column_name == :mass
+      puts "ID of bee with #{value} efficiency was #{self.unique_values_of(search_column)[idx(value)]}"
     end
   end
 end

@@ -13,8 +13,8 @@ class Analysis
     @rating       = []
   end
 
-  def calculate(iterator, column_name, search_column)
-    self.unique_values_of(iterator).each do |argument|
+  def calculate(search_column, column_name)
+    self.unique_values_of(search_column).each do |argument|
       sum_up(column_name, argument, search_column)
     end
     @rating
