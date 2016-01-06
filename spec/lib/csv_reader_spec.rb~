@@ -9,7 +9,7 @@ describe 'CsvReader' do
       run = CsvReader.new
       expect(run.harvest_data).not_to be_empty
     end
-    
+
     it 'pollen data should be true after initialization' do
       run = CsvReader.new
       expect(run.pollen_data).not_to be_empty

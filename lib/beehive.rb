@@ -1,37 +1,33 @@
 #!/usr/bin/ruby -wKU
 require 'optparse'
-require_relative 'calendar'
-require_relative 'efficiency'
-require_relative 'popularity'
-require_relative 'sugarcalculator'
-require_relative 'sugarity'
-
-#puts "The most sugar was produces from #{Sugar.new.most_sugar} pollen"
+require_relative 'analysis'
+require_relative 'sugar_analysis'
+require_relative 'efficiency_analysis'
 
 OptionParser.new do |options|
   options.banner = "Usage: beehive.rb [options]"
 
   options.on("--most_efficient") do
-    puts Efficiency.new.most_efficient
+    EfficiencyAnalysis.new.result :bee, :mass, :max
   end
 
   options.on("--least_efficient") do
-    puts Efficiency.new.least_efficient
+    EfficiencyAnalysis.new.result :bee, :mass, :min
   end
 
   options.on("--most_popular") do
-    puts Popularity.new.most_popular
+    Analysis.new.result :pollen_id, :mass, :max
   end
 
   options.on("--best_day") do
-    puts Calendar.new.best_day
+    SugarAnalysis.new.result :day, :mass, :max
   end
-  
+
   options.on("--worst_day") do
-    puts Calendar.new.worst_day
+    SugarAnalysis.new.result :day, :mass, :min
   end
 
   options.on("--most_sugar") do
-    puts Sugarity.new.most_sugar
+    SugarAnalysis.new.result :pollen_id, :mass, :max
   end
 end.parse!

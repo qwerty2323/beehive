@@ -9,7 +9,7 @@ Get OOP or die trying.
 - [x] Which day was the best for harvest? Which was the worst?
 - [x] Which bee was the most efficient? Which was the least?
 - [ ] Tables/plots for days and bees
-- [ ] Eliminate duplication? _DRY_
+- [x] Eliminate duplication? _DRY_
 
 
 ## Specs 
