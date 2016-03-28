@@ -1,8 +1,0 @@
-#!/usr/bin/ruby -wKU
-
-def simple_method_with_yield
-  yield
-end
-
-simple_method_with_yield { puts 'Hello' }
-  

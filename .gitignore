@@ -1,0 +1,7 @@
+# Ignore all emacs temp
+*~
+\#*#
+
+# Ignore coverage
+
+/coverage
