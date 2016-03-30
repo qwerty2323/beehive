@@ -1,28 +1,36 @@
 # Beehive Challenge
+
 :honeybee: :honeybee: :honeybee: :honeybee: :honeybee:
 Get OOP or die trying.
 
-##Must answer this questions:
+## Requirements
 
-- [x] From what kind of pollen the most sugar was produced?
-- [x] What kind of pollen was the most popular?
-- [x] Which day was the best for harvest? Which was the worst?
-- [x] Which bee was the most efficient? Which was the least?
-- [ ] Tables/plots for days and bees
-- [x] Eliminate duplication? _DRY_
+** TODO Progress: [0%]
 
+*** - [ ] Run in Cli -> Configure Optparse
 
-## Specs 
+*** - [ ] Have specs & solid coverage [0%]
 
-_Under Contruction_
+**** - [ ] it 'should open the files'
 
-- [x] it 'should open the files'
-- [x] it 'should get free from structure of CSV data' -> Fill the Struct?
-- [x] it 'should get mass and pollen_id from the files to calculate sugar'
-- [x] it 'should summ up sugar value for each day'
-- [x] it 'should summ up sugar value and divide by day.count for each bee_id'
-- [x] it 'should summ up mass for each pollen_id'
-- [ ] it 'should create tables/plots for bees and days
+**** - [ ] it 'should get mass and pollen_id from the files to calculate sugar'
+
+**** - [ ] it 'should summ up sugar value for each day'
+
+**** - [ ] it 'should summ up sugar value and divide by day.count for each bee_id'
+
+**** - [ ] it 'should summ up mass for each pollen_id'
+
+*** - [ ] Create tables/plots -> GnuPlot|CSV
+
+## Questions
+
+** TODO Answers questions: [0/4]
+
+- [ ] From what kind of pollen the most sugar was produced?
+- [ ] What kind of pollen was the most popular?
+- [ ] Which day was the best for harvest? Which was the worst?
+- [ ] Which bee was the most efficient? Which was the least?
 
 ## Contributing
 
@@ -30,5 +38,4 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/qwerty
 
 ## License
 
-The app is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
+The app is available as open source under the terms of the [MIT License](http://opensource.org/licenses/\
