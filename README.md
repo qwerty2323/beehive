@@ -11,20 +11,12 @@ Get OOP or die trying.
 - [ ] Have specs & solid coverage [0%]
 
   - [ ] it 'should open the files'
-
   - [ ] it 'should get mass and pollen_id from the files to calculate sugar'
-
-  - [ ] it 'should summ up sugar value for each day'
-
+  - [ ] it 'should summ up sugar value for each day
   - [ ] it 'should summ up sugar value and divide by day.count for each bee_id'
-
   - [ ] it 'should summ up mass for each pollen_id'
-     
 
- - [ ] Create tables/plots -> GnuPlot|CSV
-
-## Questions
-
+- [ ] Create tables/plots -> GnuPlot|CSV
 
 ** TODO Answers questions: [0/4]
 
